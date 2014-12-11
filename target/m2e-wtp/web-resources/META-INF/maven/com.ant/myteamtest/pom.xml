@@ -1,0 +1,76 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.ant</groupId>
+  <artifactId>myteamtest</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>myteamtest Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+
+<properties>
+<myfaces-version>2.1.12</myfaces-version>
+<primefaces-version>3.5</primefaces-version>
+</properties>
+
+<repositories>
+<repository>
+<id>prime-repo</id>
+<name>PrimeFaces Maven Repository</name>
+<url>http://repository.primefaces.org</url>
+<layout>default</layout>
+</repository>
+</repositories>
+
+
+
+
+  <dependencies>
+  
+  <dependency>
+<groupId>org.primefaces</groupId>
+<artifactId>primefaces</artifactId>
+<version>${primefaces-version}</version>
+</dependency>
+  
+  
+  <!-- MyFaces -->
+<dependency>
+<groupId>org.apache.myfaces.core</groupId>
+<artifactId>myfaces-api</artifactId>
+<version>${myfaces-version}</version>
+</dependency>
+
+<dependency>
+<groupId>org.apache.myfaces.core</groupId>
+<artifactId>myfaces-impl</artifactId>
+<version>${myfaces-version}</version>
+</dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <finalName>myteamtest</finalName>
+    
+    <plugins>
+       <plugin>
+		<groupId>org.apache.tomcat.maven</groupId>
+		<artifactId>tomcat7-maven-plugin</artifactId>
+		<version>2.2</version>
+		<configuration>
+			<url>http://localhost:8080/myteamtest</url>
+			<server>TomcatServer</server>
+			<path>/myteamtest</path>
+		</configuration>
+	</plugin>
+        </plugins>
+  </build>
+  
+  
+	
+</project>
